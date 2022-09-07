@@ -98,8 +98,7 @@ LIMIT 1;
 -- ** Number of Top Songs **
 
 -- Lists the number of songs the artist has in the database
-SELECT artist,
-COUNT(song) AS song_count
+SELECT artist, COUNT(song) AS song_count
 FROM TopHitsSpotify
 WHERE artist = 'Rihanna';
 
@@ -127,6 +126,5 @@ FROM TopHitsSpotify AS t
 LEFT JOIN rihanna_album_wiki_cleaned AS a 
 -- Since we only need album information for tracks in the original database, a left join should suffice
 	USING(song)
-WHERE t.artist = 'Rihanna'
-;
+WHERE t.artist = 'Rihanna';
 -- ******************************************************************
