@@ -105,7 +105,7 @@ WHERE artist = 'Rihanna';
 -- ** Total Minutes of Songs **
 
 -- Adds the number of minutes of songs the top artist has
-SELECT artist, FLOOR(SUM(duration_ms) / (1000 * 60)) % 60 as minutes
+SELECT artist, FLOOR(SUM(duration_ms) / 60000) AS minutes
 FROM TopHitsSpotify
 WHERE artist = 'Rihanna'
 GROUP BY artist;
